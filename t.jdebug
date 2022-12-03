@@ -22,7 +22,8 @@ void OnProjectLoad (void) {
   //
   // Dialog-generated settings
   //
-  Project.AddPathSubstitute (".", "$(ProjectDir)");
+  Project.AddPathSubstitute ("/Users/jalon/workspace/test-rust-mcu", "$(ProjectDir)");
+  Project.AddPathSubstitute ("/users/jalon/workspace/test-rust-mcu", "$(ProjectDir)");
   Project.SetDevice ("STM32F103RC");
   Project.SetHostIF ("USB", "");
   Project.SetTargetIF ("SWD");
