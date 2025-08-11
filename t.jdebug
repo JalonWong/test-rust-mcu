@@ -3,10 +3,6 @@
 *                      The Embedded Experts                          *
 *                         www.segger.com                             *
 **********************************************************************
-
-File          : /Users/jalon/workspace/test-rust-mcu/t.jdebug
-Created       : 3 Dec 2022 14:42
-Ozone Version : V3.28a
 */
 
 /*********************************************************************
@@ -22,9 +18,7 @@ void OnProjectLoad (void) {
   //
   // Dialog-generated settings
   //
-  Project.AddPathSubstitute ("/Users/jalon/workspace/test-rust-mcu", "$(ProjectDir)");
-  Project.AddPathSubstitute ("/users/jalon/workspace/test-rust-mcu", "$(ProjectDir)");
-  Project.SetDevice ("STM32F103RC");
+  Project.SetDevice ("STM32F103C8");
   Project.SetHostIF ("USB", "");
   Project.SetTargetIF ("SWD");
   Project.SetTIFSpeed ("4 MHz");

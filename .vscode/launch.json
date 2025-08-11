@@ -11,8 +11,8 @@
             "runToEntryPoint": "main",
             "svdFile": "STM32F103.svd",
             "preLaunchTask": "build",
-            "device": "STM32F103RC",
-            "executable": "./target/thumbv7m-none-eabi/release/test-rust-mcu"
+            "device": "STM32F103C8",
+            "executable": "${workspaceFolder}/target/thumbv7m-none-eabi/release/test-rust-mcu"
         }
     ]
 }

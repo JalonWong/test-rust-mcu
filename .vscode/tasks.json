@@ -6,11 +6,8 @@
     "tasks": [
         {
             "label": "check",
-            "type": "shell",
-            "command": "cargo",
-            "args": [
-                "check"
-            ],
+            "type": "cargo",
+            "command": "check",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -19,10 +16,9 @@
         },
         {
             "label": "build",
-            "type": "shell",
-            "command": "cargo",
+            "type": "cargo",
+            "command": "build",
             "args": [
-                "build",
                 "--release"
             ],
             "group": "build",

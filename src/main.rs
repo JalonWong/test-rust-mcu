@@ -9,7 +9,7 @@ use nb::block;
 
 // use alloc::{boxed::Box, string::String, vec::Vec};
 use cortex_m_rt::entry;
-use embedded_hal::digital::v2::OutputPin;
+use embedded_hal::digital::OutputPin;
 use stm32f1xx_hal::{gpio::PinState, pac, prelude::*, timer::Timer};
 
 #[entry]
@@ -28,17 +28,14 @@ fn main() -> ! {
     // `clocks`
     let clocks = rcc.cfgr.freeze(&mut flash.acr);
 
-    let mut gpio = dp.GPIOA.split();
+    let mut gpio = dp.GPIOB.split();
 
-    // Configure gpio C pin 13 as a push-pull output. The `crh` register is passed to the function
-    // in order to configure the port. For pins 0-7, crl should be passed instead.
-    // let mut led = gpioa.pa8.into_push_pull_output(&mut gpioa.crh);
     let mut led = gpio
-        .pa8
-        .into_open_drain_output_with_state(&mut gpio.crh, PinState::High);
-    // Configure the syst timer to trigger an update every second
+        .pb0
+        .into_open_drain_output_with_state(&mut gpio.crl, PinState::High);
+
     let mut timer = Timer::syst(cp.SYST, &clocks).counter_hz();
-    timer.start(2.Hz()).unwrap();
+    timer.start(4.Hz()).unwrap();
 
     let mut _cnt: u32 = 0;
     let mut _cnt16: u16 = 1;
